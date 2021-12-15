@@ -22,16 +22,16 @@ const registrationTokens = [
 app.get('/', (req, res) => {
   console.log(req.query.id);
   res.send('Hello World!');
-//   getMessaging()
-//     .subscribeToTopic([req.query.id], 'Alert')
-//     .then((response) => {
-//       // See the MessagingTopicManagementResponse reference documentation
-//       // for the contents of response.
-//       console.log('Successfully subscribed to topic:', response);
-//     })
-//     .catch((error) => {
-//       console.log('Error subscribing to topic:', error);
-//     });
+  getMessaging()
+    .subscribeToTopic([req.query.id], 'Alert')
+    .then((response) => {
+      // See the MessagingTopicManagementResponse reference documentation
+      // for the contents of response.
+      console.log('Successfully subscribed to topic:', response);
+    })
+    .catch((error) => {
+      console.log('Error subscribing to topic:', error);
+    });
 });
 
 app.listen(process.env.PORT || 5000, () => {
